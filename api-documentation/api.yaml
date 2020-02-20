@@ -12,9 +12,14 @@ info:
   version: 1.0.0
 servers:
 - url: /
+tags:
+- name: Request
+  description: Webhook Request
 paths:
   /:
     post:
+      tags:
+      - Request
       summary: POST request triggerred by hubsolv application to the configured URL.
       description: Triggers a webhook
       operationId: PostEvent
