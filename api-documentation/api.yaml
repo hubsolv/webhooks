@@ -1,0 +1,116 @@
+openapi: 3.0.0
+info:
+  title: Webhook Format
+  description: Webhook Specification
+  contact:
+    email: support@hubsolv.com
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /:
+    post:
+      summary: Webhook call triggerred by hubsolv application to the client configured
+        URL.
+      description: Triggers a webhook
+      operationId: PostEvent
+      requestBody:
+        content:
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/WebhookRequest'
+      responses:
+        "200":
+          description: Success - No Content
+          headers:
+            Access-Control-Allow-Origin:
+              $ref: '#/components/headers/Access-Control-Allow-Origin'
+            Access-Control-Allow-Methods:
+              $ref: '#/components/headers/Access-Control-Allow-Methods'
+            Access-Control-Allow-Headers:
+              $ref: '#/components/headers/Access-Control-Allow-Headers'
+        "202":
+          description: Success - No Content
+          headers:
+            Access-Control-Allow-Origin:
+              $ref: '#/components/headers/Access-Control-Allow-Origin'
+            Access-Control-Allow-Methods:
+              $ref: '#/components/headers/Access-Control-Allow-Methods'
+            Access-Control-Allow-Headers:
+              $ref: '#/components/headers/Access-Control-Allow-Headers'
+components:
+  schemas:
+    WebhookRequest:
+      type: object
+      properties:
+        type:
+          type: string
+          example: events
+        id:
+          type: string
+          example: 7382e58f-de1e-4969-a1e2-d98fc3363ee8
+        attributes:
+          $ref: '#/components/schemas/WebhookAttributes'
+        relationships:
+          $ref: '#/components/schemas/CaseRelationship'
+    WebhookAttributes:
+      type: object
+      properties:
+        jobId:
+          type: string
+          example: 7cba53b3-7495-4fd7-b148-06e76b2c3806
+        jobType:
+          type: string
+          example: newCase
+        status:
+          type: string
+          example: success
+        extraInfo:
+          type: string
+          example: Additional information
+        timestamp:
+          type: string
+          example: 2020-02-19T13:54:18+00:00
+    CaseRelationship:
+      type: object
+      properties:
+        cases:
+          $ref: '#/components/schemas/CaseData'
+    CaseData:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/CaseResource'
+        links:
+          $ref: '#/components/schemas/ResourceLink'
+    CaseResource:
+      type: object
+      properties:
+        type:
+          type: string
+          example: cases
+        id:
+          type: string
+          example: 729a3bc4-7069-4be3-9a5e-b31bdfb9c350
+    ResourceLink:
+      type: object
+      properties:
+        resource:
+          type: string
+          example: https://hubsolv.com/test/cases/6bba53b3-7495-4fd7-b148-06e76b2c3823
+  headers:
+    Access-Control-Allow-Origin:
+      style: simple
+      explode: false
+      schema:
+        type: string
+    Access-Control-Allow-Methods:
+      style: simple
+      explode: false
+      schema:
+        type: string
+    Access-Control-Allow-Headers:
+      style: simple
+      explode: false
+      schema:
+        type: string
