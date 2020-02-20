@@ -1,11 +1,11 @@
 openapi: 3.0.0
 info:
   title: Hubsolv's Standrad Webhook Request
-  description: '<style=''font-weight: 100pt;''>This document has the standard POST
-    request triggered by Hubsolv Application to the configured webhook URL.<br> The
-    application that trigged this request expects either a 200 or a 202 response from
-    the webhook.<br> In case the webhook URL is unreachable, the application tries
-    this request every minute for 10 minutes.'
+  description: This document has the standard POST request triggered by Hubsolv Application
+    to the configured webhook URL.<br> The application that trigged this request expects
+    either a <b>200</b> or a <b>202</b> response from the webhook.<br> In case the
+    webhook URL is unreachable, the application tries this request every minute for
+    10 minutes.
   contact:
     email: support@hubsolv.com
   version: 1.0.0
