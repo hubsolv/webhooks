@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Webhook Format
+  title: Hubsolv's Standrad Webhook Format
   description: Webhook Specification
   contact:
     email: support@hubsolv.com
@@ -10,8 +10,7 @@ servers:
 paths:
   /:
     post:
-      summary: Webhook call triggerred by hubsolv application to the client configured
-        URL.
+      summary: POST request triggerred by hubsolv application to the configured URL.
       description: Triggers a webhook
       operationId: PostEvent
       requestBody:
