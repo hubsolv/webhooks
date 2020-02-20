@@ -2,7 +2,7 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Hubsolv's Standrad Webhook Request",
-    "description" : "<p style='font-weight: 20pt;'>This document has the standard <b>POST<b> request triggered by Hubsolv Application to the configured webhook URL.<br> The application that trigged this request expects either a <b>200</b> or a <b>202</b> response from the webhook.<br> In case the webhook URL is unreachable, the application tries this request every minute for 10 minutes.</p>",
+    "description" : "<p style='font-weight: 20pt;'>This document has the standard <b>POST</b> request triggered by Hubsolv Application to the configured webhook URL.<br> The application that trigged this request expects either a <b>200</b> or a <b>202</b> response from the webhook.<br> In case the webhook URL is unreachable, the application tries this request every minute for 10 minutes.</p>",
     "contact" : {
       "email" : "support@hubsolv.com"
     },
