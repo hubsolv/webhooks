@@ -110,22 +110,12 @@
           }
         }
       },
-      "CaseRelationship" : {
+      "ResourceLink" : {
         "type" : "object",
         "properties" : {
-          "cases" : {
-            "$ref" : "#/components/schemas/CaseData"
-          }
-        }
-      },
-      "CaseData" : {
-        "type" : "object",
-        "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/CaseResource"
-          },
-          "links" : {
-            "$ref" : "#/components/schemas/ResourceLink"
+          "resource" : {
+            "type" : "string",
+            "example" : "https://hubsolv.com/test/cases/6bba53b3-7495-4fd7-b148-06e76b2c3823"
           }
         }
       },
@@ -142,34 +132,38 @@
           }
         }
       },
-      "ResourceLink" : {
+      "CaseData" : {
         "type" : "object",
         "properties" : {
-          "resource" : {
-            "type" : "string",
-            "example" : "https://hubsolv.com/test/cases/6bba53b3-7495-4fd7-b148-06e76b2c3823"
+          "data" : {
+            "$ref" : "#/components/schemas/CaseResource"
+          },
+          "links" : {
+            "$ref" : "#/components/schemas/ResourceLink"
+          }
+        }
+      },
+      "CaseRelationship" : {
+        "type" : "object",
+        "properties" : {
+          "cases" : {
+            "$ref" : "#/components/schemas/CaseData"
           }
         }
       }
     },
     "headers" : {
       "Access-Control-Allow-Origin" : {
-        "style" : "simple",
-        "explode" : false,
         "schema" : {
           "type" : "string"
         }
       },
       "Access-Control-Allow-Methods" : {
-        "style" : "simple",
-        "explode" : false,
         "schema" : {
           "type" : "string"
         }
       },
       "Access-Control-Allow-Headers" : {
-        "style" : "simple",
-        "explode" : false,
         "schema" : {
           "type" : "string"
         }
